@@ -1,0 +1,22 @@
+package com.santodev.springcoredemo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/*
+@SpringBootApplication(
+        scanBasePackages = {
+                "com.santodev.springcoredemo",
+                "com.santodev.util"
+        }
+)
+ */
+
+@SpringBootApplication
+public class SpringCoreDemoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringCoreDemoApplication.class, args);
+	}
+
+}
