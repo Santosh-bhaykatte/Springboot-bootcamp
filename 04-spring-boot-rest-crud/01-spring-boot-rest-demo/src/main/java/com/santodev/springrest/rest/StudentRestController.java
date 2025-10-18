@@ -40,35 +40,6 @@ public class StudentRestController {
         if (id >= students.size() || id < 0) {
             throw new StudentNotFoundException("Student id not found: "+ id);
         }
-
         return students.get(id);
-    }
-
-    // exception handler method
-    @ExceptionHandler
-    public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException e) {
-        // create StudentErrorResponse object
-        StudentErrorResponse error = new StudentErrorResponse();
-
-        error.setStatus(HttpStatus.NOT_FOUND.value());
-        error.setMessage(e.getMessage());
-        error.setTimeStamp(System.currentTimeMillis());
-
-        // return ResponseEntity
-        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
-    }
-
-    // exception handler to catch any exception (catch all)
-    @ExceptionHandler
-    public ResponseEntity<StudentErrorResponse> handleException(Exception e) {
-        // create StudentErrorResponse object
-        StudentErrorResponse error = new StudentErrorResponse();
-
-        error.setStatus(HttpStatus.BAD_REQUEST.value());
-        error.setMessage(e.getMessage());
-        error.setTimeStamp(System.currentTimeMillis());
-
-        // return ResponseEntity
-        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 }

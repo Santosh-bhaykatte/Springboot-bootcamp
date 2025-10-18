@@ -6,7 +6,7 @@ public class StudentErrorResponse {
     private long timeStamp;
 
     public StudentErrorResponse() {
-
+        //
     }
 
     public StudentErrorResponse(int status, String message, long timeStamp) {
