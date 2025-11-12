@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 @Configuration
 public class DemoSecurityConfig {
 
-    //add support for JDBC .... no more hardcoded users
+    //add support for JDBC Authentication .... no more hardcoded users
     @Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource) {
         JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);      //tell Spring security to use JDBC authentication for access
